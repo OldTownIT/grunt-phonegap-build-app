@@ -41,7 +41,6 @@
     "build"
   ],
   "dependencies": {
-    "form-data": "~0.1.2",
-    "fs": "*"
+    "form-data": "~0.1.2"
   }
 }
