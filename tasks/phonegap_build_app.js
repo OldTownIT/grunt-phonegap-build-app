@@ -55,7 +55,7 @@ module.exports = function(grunt) {
 //                    }
 
 
-    grunt.registerMultiTask("phonegap-build", "Creates a ZIP archive and uploads it to build.phonegap.com to create a new build", function (args) {
+    grunt.registerMultiTask("phonegap_build_app", "Creates a ZIP archive and uploads it to build.phonegap.com to create a new build", function (args) {
         var options = this.options({
             timeout: 60000,
             pollRate: 15000
