@@ -10,7 +10,6 @@
 
 var FormData = require('form-data');
 var fs = require('fs');
-var path = require('path');
 
 module.exports = function(grunt) {
     function run(options, done) {
