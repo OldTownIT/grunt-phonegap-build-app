@@ -20,17 +20,15 @@ module.exports = function(grunt) {
 
     function createApp(options) {
         grunt.log.ok('Uploading ' + options.archive + ' file to PhoneGap...');
-        grunt.log.ok('ok');
         var form = new FormData();
         form.append('data', '{"title": "' + options.appName + '", "keys": {"android": {"id": ' + options.keys.android.key_id + ', "key_pw": "' + options.keys.android.key_pw + '", "keystore_pw": "' + options.keys.android.keystore_pw + '"}, "ios": {"id": ' + options.keys.ios.key_id + ', "password": "' + options.keys.ios.password + '"}}, "private": true, "create_method": "file"}');
         form.append('file', fs.createReadStream(options.archive));
         grunt.log.ok('Submitting form...');
-        form.submit('https://build.phonegap.com/api/v1/apps', function(err, res) {
-            grunt.log.ok(err);
-            grunt.log.ok(res);
+        var result = form.submit('https://build.phonegap.com/api/v1/apps', function(err, res) {
             res.resume();
-            grunt.log.ok('Upload successful!');
         });
+        grunt.log.ok(result);
+        grunt.log.ok('Upload successful!');
     }
 
 //    function updateApp(f, options) {
